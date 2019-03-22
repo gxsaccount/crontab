@@ -22,7 +22,7 @@ var (
 )
 
 //初始化服务
-func InitApiServer(err error) {
+func InitApiServer() (err error) {
 	var (
 		mux        *http.ServeMux
 		listener   net.Listener
