@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/gxsaccount/crontab/src/master"
+	"master"
 	"runtime"
 )
 
@@ -34,11 +34,16 @@ func main() {
 		goto ERR
 	}
 
+	//加载配置
+	if err = master.InitJobMgr(); err != nil {
+		goto ERR
+	}
+
 	//启动api HTTP服务
 	if err = master.InitApiServer(); err != nil {
 		goto ERR
 	}
-
+	return
 ERR:
 	fmt.Println("err")
 

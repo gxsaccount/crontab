@@ -12,7 +12,9 @@ type ApiServer struct {
 	httpServer *http.Server
 }
 
+//保存任务接口
 func handleJobSave(w http.ResponseWriter, r *http.Request) {
+	//任务i保存到etcd中
 
 }
 
